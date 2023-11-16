@@ -15,6 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
+        // dd("ddd");
         $users = User::all();
         $data = compact('users');
         return view('manageUser')->with(($data));
@@ -48,6 +49,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'first_name'=> 'required',
+            'last_name'=> 'required',
+            'email'=>'required|email',
+            'password' =>'required',
+            'confirm_password' =>'required',
+            
+        ]);
         $user = new User;
         $user->first_name = $request['first_name'];
         $user->last_name = $request['last_name'];

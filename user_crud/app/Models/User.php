@@ -2,16 +2,21 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class User extends Model
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+class User extends Authenticatable
 {
     use HasFactory;
     use SoftDeletes;
+
     protected $table="users";
     protected $primaryKey="id";
+    protected $guarded=['id'];
 
     public function setFirstNameAttribute($value){
         $this->attributes['first_name'] = ucwords($value);
