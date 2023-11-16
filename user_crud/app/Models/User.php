@@ -16,7 +16,7 @@ class User extends Authenticatable
 
     protected $table="users";
     protected $primaryKey="id";
-    protected $guarded=['id'];
+    protected $guarded=['id']; 
 
     public function setFirstNameAttribute($value){
         $this->attributes['first_name'] = ucwords($value);
