@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @push('title')
-    <title>CRUD - Manage</title>
+    <title>CRUD - Trashed Data</title>
 @endpush
 
 @section('main-section')
@@ -11,11 +11,10 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-6">
-                            <h1 class="mt-4">Manage User</h1>
+                            <h1 class="mt-4">Trashed User</h1>
                         </div>
                         <div class="col-md-6 ">
-                            <a class="btn btn-primary mt-4 " href="{{ route('users.create') }}">Create</a>
-                            <a class="btn btn-danger mt-4 " href="{{ route('trash') }}">Trash</a>
+                            <a class="btn btn-primary mt-4 " href="{{ route('users.index') }}">Go to Manage User</a>
                         </div>
                     </div>
                 </div>
@@ -24,7 +23,7 @@
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
-                    Active User Data
+                    InActive User Data
                 </div>
                 <div class="card-body">
                     <table id="datatablesSimple">
@@ -63,13 +62,8 @@
                                 <td>{{$user->address}}</td>
                                 <td>{{$user->status}}</td>
                                 <td class="d-flex">
-                                    <form action="{{route('users.destroy',$user->id)}}" method="post">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn "><i class="fas fa-trash-alt" style="color: red"></i></button>
-                                        {{-- <a href="{{route('users.destroy',$user->id)}}"><i class="fas fa-trash" style="color: red"></i></a> --}}
-                                        </form>
-                                    <a  href="{{route('users.edit',$user->id)}}"><i class="fas fa-edit" style="color: green"></i></a>
+                                    <a href="{{route('delete',$user->id)}}"><i class="fas fa-trash" style="color: red"></i></a>
+                                    <a  href="{{route('restore',$user->id)}}"><i class="fas fa-trash-restore"style="color: green"></i></a>
                                     
                                 </td>
                             </tr>

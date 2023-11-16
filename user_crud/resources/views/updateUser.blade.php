@@ -15,27 +15,28 @@
                                 <h3 class="text-center font-weight-light my-4">{{$title ?? null}}</h3>
                             </div>
                             <div class="card-body">
-                                {{-- @dd($url); --}}
-                                <form action="{{$url}}" method="post">
+                                {{-- @dd($user); --}}
+                                <form action="{{ route('users.update',$user->id)}}" method="POST">
+                                    @method('PUT')
                                     @csrf
                                     <div class="row mb-3">
                                         <div class="col-md-6">
                                             <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="inputFirstName" name="first_name"  type="text"
+                                                <input class="form-control" id="inputFirstName" name="first_name" value="{{$user->first_name ?? null}}" type="text"
                                                     placeholder="Enter your first name" />
                                                 <label for="inputFirstName">First name</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input class="form-control" id="inputLastName" name="last_name" type="text"
+                                                <input class="form-control" id="inputLastName" name="last_name" type="text" value="{{$user->last_name ?? null}}"
                                                     placeholder="Enter your last name" />
                                                 <label for="inputLastName">Last name</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="inputEmail" name="email" type="email"
+                                        <input class="form-control" id="inputEmail" name="email" value="{{$user->email ?? null}}" type="email"
                                             placeholder="name@example.com" />
                                         <label for="inputEmail">Email address</label>
                                     </div>
@@ -58,14 +59,14 @@
                                     <div class="row mb-3">
                                         <div class="col-md-4">
                                             <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="inputContact"  name="contact" type="number"
+                                                <input class="form-control" id="inputContact" value="{{$user->contact ?? null}}" name="contact" type="number"
                                                     placeholder="Contact" />
                                                 <label for="inputContact">Contact</label>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="inputDateOfBirth" name="dob" type="date" 
+                                                <input class="form-control" id="inputDateOfBirth" name="dob" type="date" value="{{$user->dob ?? null}}"
                                                     placeholder="Date Of Birth" />
                                                 <label for="inputDateOfBirth">Date Of Birth</label>
                                             </div>
@@ -75,15 +76,15 @@
                                                 <div class="d-flex align-items-center">
                                                     <label for="inputGender" class="mr-2">Gender</label>
                                                     <div class="form-check form-check-inline">
-                                                        <input id="inputGender" name="gender" value="M"  type="radio" class="form-check-input ms-2" />
+                                                        <input id="inputGender" name="gender" value="M" {{$user->gender == "M" ? "checked" : "M"}} type="radio" class="form-check-input ms-2" />
                                                         <label class="form-check-label" for="inputGender">M</label>
                                                     </div>
                                                     <div class="form-check form-check-inline">
-                                                        <input id="inputGender" name="gender" value="F"  type="radio" class="form-check-input" />
+                                                        <input id="inputGender" name="gender" value="F" {{$user->gender == "F" ? "checked" : "F"}} type="radio" class="form-check-input" />
                                                         <label class="form-check-label" for="inputGender">F</label>
                                                     </div>
                                                     <div class="form-check form-check-inline">
-                                                        <input id="inputGender" name="gender" value="O"  type="radio" class="form-check-input" />
+                                                        <input id="inputGender" name="gender" value="O" {{$user->gender == "O" ? "checked" : "O"}} type="radio" class="form-check-input" />
                                                         <label class="form-check-label" for="inputGender">O</label>
                                                     </div>
                                                 </div>
@@ -96,7 +97,7 @@
                                     </div>
                                     <div class="mt-4 mb-0">
                                         <div class="d-grid">
-                                            <button class="btn btn-primary btn-block" id="submit" type="submit">{{$button   }}</button>
+                                            <button class="btn btn-primary btn-block" id="submit" type="submit">{{$button}}</button>
 
                                         </div>
                                     </div>
