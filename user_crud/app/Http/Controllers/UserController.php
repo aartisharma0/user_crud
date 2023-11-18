@@ -49,12 +49,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $request->validate([
             'first_name'=> 'required',
             'last_name'=> 'required',
             'email'=>'required|email',
             'password' =>'required',
-            'confirm_password' =>'required',
+            // 'image' => 'required|mimes:csv,txt,xlx,xls,pdf|max:2048'
+
             
         ]);
         $user = new User;
@@ -64,6 +66,18 @@ class UserController extends Controller
         $user->contact = $request['contact'];
         $user->dob = $request['dob'];
         $user->gender = $request['gender'];
+        // dd($request->hasFile('image'));
+        // dd(
+        //     "fghjkl"
+        // );
+        if($request->hasFile('image')) {
+
+            $fileName = time().'_'.$request->image->getClientOriginalName();
+            $filePath = $request->file('image')->storeAs('uploads', $fileName, 'public');
+            // dd(time().'_'.$request->image->getClientOriginalName());
+            $user->image_name = time().'_'.$request->image->getClientOriginalName();
+            $user->file_path = '/storage/' . $filePath;
+        }
         $user->address = $request['address'];
         $user->password = md5($request['password']);
         $user->save();

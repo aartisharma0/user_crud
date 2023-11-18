@@ -20,7 +20,9 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->integer('contact');
             $table->string('dob',50);
-            $table->string('gender',50);
+            $table->string('dob',50);
+            $table->string('image_name')->nullable();
+            $table->string('file_path')->nullable();
             $table->text('address',50);
             $table->string('password');
             $table->string('status',50)->default('active');
