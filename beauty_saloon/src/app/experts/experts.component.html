@@ -1,0 +1,26 @@
+
+<div class="team">
+		<div class="container">
+		<h3 class="heading-agileinfo">Our beuticians<span>Skin,Nails and Beauty Services</span></h3>
+			<div class="agile_team_grids">
+				
+                <div class="col-md-3 agile_team_grid" *ngFor="let data of expert">
+					<div class="view view-sixth">
+						<img src="{{data.image}}" alt=" " class="img-responsive" style="height:251px;">
+						<div class="mask">
+							<h5>{{data.name}}</h5>
+						</div>
+					</div>
+					<h4>{{data.name}}</h4>
+					<p>Email : {{data.email}}<br>Contact : {{data.contact}}<br>Address : {{data.address}}<br>Experience : {{data.experience}}<br></p>
+				</div>
+				
+				
+				
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //Team -->
+
+

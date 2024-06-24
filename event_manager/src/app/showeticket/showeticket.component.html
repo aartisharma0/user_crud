@@ -1,0 +1,33 @@
+<section id="register" class="register sections-bg">
+    <div class="container-fluid my-1">
+        <div class="row">
+            <div class="col-md-10 mx-auto my-1  rounded-3">
+                <!--heading-->
+                <div class="mx-auto mt-2 fw-bolder">
+                    <h1 style="text-align: center;color: rgb(0, 0, 0);">Choose Ticket</h1>
+                    <hr class="hell mx-auto">
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-lg-4 mb-4 mt-4 mb-lg-0" *ngFor="let data of services,">
+                      <div class="card bg-success bg-opacity-25" style="height: 300px;">
+                        <div class="card-body">
+                            <div class="d-flex mt-3">
+                              <h5 style="text-align: center;">{{data.ticketCode }}</h5>
+                            </div>
+                            <div class="mt-1">
+                              <p>{{data.ticketName}}</p>
+                              <p>{{data.ticketDescription}}</p>
+                              <p>{{data.price | currency:'INR'}}</p>
+                              <a [routerLink]="['/layout/addbooking',data.ticketCode]" class="btn btn-success btn-center" *ngIf="((userdata?.userType == 'User') && (isloggedIn))">Book Now</a>
+                              <a [routerLink]="['/layout/login']" class="btn btn-success btn-center" *ngIf="!isloggedIn">Login to Book</a>
+                  
+                            </div>
+                          </div>
+                      </div>
+                  
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</section>

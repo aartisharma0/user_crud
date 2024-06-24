@@ -1,0 +1,27 @@
+<section id="register" class="register sections-bg">
+    <div class="container-fluid my-1">
+      <div class="row">
+        <div class="col-md-6 mx-auto my-1  rounded-3">
+          <!--heading-->
+          <div class="mx-auto mt-2 fw-bolder">
+            <h1 style="text-align: center;color: rgb(0, 0, 0);">Update Ticket Type</h1>
+              <hr class="hell mx-auto">
+          </div>
+          <!--heading end-->
+          <!--form-->
+          <form>
+            <div class="row mt-5 fw-bolder">
+  
+              <div class="col-md-12">
+                <label for="exampleFormControlInput1" class="form-label text-black h6">Ticket Type</label>
+                <input type="text" class="form-control rounded-pill" id="exampleFormControlInput1"  placeholder="Enter Ticket Type" name="ticketType" #ticketType [(ngModel)]="form.ticketType" required>
+              </div>
+            </div>
+            <div class="d-grid gap-2 col-md-2 mt-5  mx-auto">
+              <button class="btn btn-primary fw-bolder" type="submit" (click)="submit()" [disabled]="!form.ticketType">Update</button>
+            </div>
+          </form>
+        </div>
+    </div>
+    </div>
+    </section>

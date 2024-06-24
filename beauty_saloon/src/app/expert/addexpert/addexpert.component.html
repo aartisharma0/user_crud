@@ -1,0 +1,88 @@
+<div class="banner-bottom">
+    <div class="container">
+        <div class="inner_sec_info_agileits_w3">
+            <h3 class="heading-agileinfo">Add Expert<span>Skin,Nails and Beauty Services</span></h3>
+            <div class="contact-form">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="Login">
+                        <form>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-1"><label>Name</label></div>
+                                    <div class="col-md-7">
+                                        <input class="form-control" placeholder="Enter Name" 
+                                        name="name" #name [(ngModel)]="form.name">
+                                
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-1"><label>Email</label></div>
+                                    <div class="col-md-7">
+                                        <input class="form-control" placeholder="Enter Email" 
+                                            name="email" #email [(ngModel)]="form.email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-1"><label>Contact</label></div>
+                                    <div class="col-md-7">
+                                        <input class="form-control" type="number" placeholder="Enter Contact" 
+                                            name="contact" #contact [(ngModel)]="form.contact">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-1"><label>Address</label></div>
+                                    <div class="col-md-7">
+                                        <input class="form-control" placeholder="Enter Address" 
+                                            name="address" #address [(ngModel)]="form.address">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-1"><label>Experience</label></div>
+                                    <div class="col-md-7">
+                                        <input class="form-control" type="number" placeholder="Enter Experience" 
+                                            name="experience" #experience [(ngModel)]="form.experience">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-1"><label>Image</label></div>
+                                    <div class="col-md-7">
+                                        <input class="form-control" (change)="selectFile($event)" type="file" name="image"
+                                            #image [(ngModel)]="form.image">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-5"></div>
+                                    <div class="col-md-6">
+                                        <button type="button" class="btn btn-danger my-3 mx-auto d-block"
+                                            (click)="submit()"
+                                            [disabled]="!form.name || !form.email || !selectedFiles  || !form.contact || !form.address || !form.experience ">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<section id="register" class="register sections-bg">
+    <div class="container-fluid my-1">
+        <div class="row">
+            <div class="col-md-10 mx-auto my-1  rounded-3">
+                <!--heading-->
+                <div class="mx-auto mt-2 fw-bolder">
+                    <h1 style="text-align: center;color: rgb(0, 0, 0);">Choose Ticket Type</h1>
+                    <hr class="hell mx-auto">
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-lg-4 mb-4 mt-4 mb-lg-0" *ngFor="let data of typeData,">
+                        <a [routerLink]="['/layout/showticket',data.ticketType,event]">
+                      <div class="card">
+                        <div class="card-body bg-danger p-2 text-dark text-center bg-opacity-25">
+                          <div class="d-flex mt-3 text-center">
+                            <h5 class="text-center">{{data.ticketType}}</h5>
+                          </div>
+                          <div class="mt-1">
+                          </div> 
+                        </div>
+                      </div>
+                    </a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</section>

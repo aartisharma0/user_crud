@@ -1,0 +1,54 @@
+<div class="banner-bottom">
+    <div class="container">
+        <div class="inner_sec_info_agileits_w3">
+            <h3 class="heading-agileinfo">Manage Expert<span>Skin,Nails and Beauty Services</span></h3>
+            <div class="container-fluid">
+                <div class="row mt-5">
+                    <div class="col-md-12 mx-auto table-responsive">
+                        <table class="table table-light table-bordered table-striped text-black">
+                            <thead class="table-dark text-white">
+                                <tr>
+                                    <th>Sr.no.</th>
+                                    <th>Name </th>
+                                    <th>Email </th>
+                                    <th>Contact</th>
+                                    <th>Experience</th>
+                                    <th>Address</th>
+                                    <th>Image</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let data of expert;let i=index">
+                                    <td>{{i+1}}</td>
+                                    <td>{{data.name}}</td>
+                                    <td>{{data.email}}</td>
+                                    <td>{{data.contact}}</td>
+                                    <td>{{data.experience}}</td>
+                                    <td>{{data.address}}</td>
+                                    <td><img src="{{data.image}}" alt="" class="img-thumbnail" style="height: 100px;" />
+                                    </td>
+                                    <td>
+                                        <span>{{data.status }}</span>
+                                    </td>
+                                    <td class="a1">
+                                        <a class=" btn2 btn btn-primary"
+                                            [routerLink]="['/layout/updateexpert',data.id]">
+                                            <i class="bi bi-pencil-square  fa-2x"></i>
+                                        </a> &nbsp;
+                                        <button class=" btn1 btn  btn-success bi bi-check "
+                                            (click)="EnableDisable(data.id,'Enable')" *ngIf="data.status == 'Disable'" ></button> &nbsp;
+                                        <button class=" btn1 btn btn-danger  bi bi-x  "
+                                            (click)="EnableDisable(data.id,'Disable')" *ngIf="data.status == 'Enable'" ></button>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

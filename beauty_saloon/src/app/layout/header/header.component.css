@@ -1,0 +1,28 @@
+.top-nav {
+    background-color: #333; /* Change to your desired background color */
+}
+
+.top-nav .navbar {
+    margin-bottom: 0; /* Remove margin to prevent breaking into multiple lines */
+}
+
+.top-nav .navbar-nav > li {
+    margin-right: 0px; /* Add spacing between menu items */
+}
+
+.top-nav .navbar-nav > li:last-child {
+    margin-right: 0; /* Remove margin for the last menu item */
+}
+
+.top-nav .navbar-nav > li > a {
+    color: #fff; /* Change text color to white */
+}
+
+.top-nav .navbar-nav > li > a:hover {
+    color: #ff0; /* Change text color on hover */
+}
+
+/* Adjust other styles as needed */
+.my-navbar {
+    margin: 0; /* Reduce margin to 0 */
+}

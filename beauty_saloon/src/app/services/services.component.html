@@ -1,0 +1,26 @@
+<div class="team">
+		<div class="container">
+		<h3 class="heading-agileinfo">Services<span>Skin,Nails and Beauty Services</span></h3>
+			<div class="agile_team_grids">
+                <div class="col-md-3 agile_team_grid" *ngFor="let data of services">
+				
+                    <div class="view view-sixth">
+						<img src="{{data.image}}" alt=" " class="img-responsive" style="height:251px;">
+						<div class="mask">
+							<h5>{{data.serviceName}}</h5>
+						</div>
+					</div>
+					<p>{{data.categoryName}}<br>{{data.description}}<br>Rs.{{data.price}}</p>
+                    <a [routerLink]="['/layout/addbooking',data.categoryName,data.serviceName]" class="btn btn-warning" *ngIf="((userdata?.userType == 'Customer') && (isloggedIn))">Book Now</a>
+                    <a [routerLink]="['/layout/login']" class="btn btn-warning" *ngIf="!isloggedIn">Login to Book</a>
+				</div>
+				
+				
+				
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //Team -->
+
+

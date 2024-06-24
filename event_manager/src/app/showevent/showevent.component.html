@@ -1,0 +1,32 @@
+<section id="register" class="register sections-bg">
+    <div class="container-fluid my-1">
+        <div class="row">
+            <div class="col-md-10 mx-auto my-1  rounded-3">
+                <!--heading-->
+                <div class="mx-auto mt-2 fw-bolder">
+                    <h1 style="text-align: center;color: rgb(0, 0, 0);">Choose Event</h1>
+                    <hr class="hell mx-auto">
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-lg-4 mb-4 mt-4 mb-lg-0" *ngFor="let data of eventData">
+                        <a [routerLink]="['/layout/showtictype',data.eventName]">
+                      <div class="card" style="height: 450px;">
+                        <img src="{{data.image}}"
+                          class="card-img-top" alt="Laptop" style="height: 250px;width: 325px;"  />
+                        <div class="card-body">
+                          <div class="d-flex mt-3">
+                            <h5 style="text-align: justify;">{{data.eventDescription }}</h5>
+                          </div>
+                          <div class="mt-1">
+                            <p>Location : {{data.eventLocation}}</p>
+                            <p>Event Date : {{data.eventDate | date}}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</section>

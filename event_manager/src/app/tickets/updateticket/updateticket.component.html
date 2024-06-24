@@ -1,0 +1,60 @@
+<section id="register" class="register sections-bg">
+    <div class="container-fluid my-1">
+      <div class="row">
+        <div class="col-md-6 mx-auto my-1  rounded-3">
+          <!--heading-->
+          <div class="mx-auto mt-2 fw-bolder">
+            <h1 style="text-align: center;color: rgb(0, 0, 0);">Update Ticket</h1>
+              <hr class="hell mx-auto">
+          </div>
+          <!--heading end-->
+          <!--form-->
+          <form>
+            <div class="row mt-5 fw-bolder">
+  
+              <div class="col-6">
+                <label for="exampleFormControlInput1" class="form-label text-black h6">Event Name</label>
+                <select id="exampleFormControlInput1" name="eventName" #eventName [(ngModel)]="form.eventName" class="form-control rounded-pill"  (change)="updateEventData()" required>
+                  <option value="" selected disabled>Select Event</option>
+                  <option *ngFor="let event of eventData" value="{{event.eventName}}">{{event.eventName}}</option>
+                </select>
+              </div>
+  
+              <div class="col-6">
+                <label for="exampleFormControlInput1" class="form-label text-black h6">Ticket Type</label>
+                <select id="exampleFormControlInput1" name="ticketType" #ticketType [(ngModel)]="form.ticketType" class="form-control rounded-pill" >
+                  <option value="" selected disabled>Select Ticket</option>
+                  <option *ngFor="let ticket of tickettypedata" value="{{ticket.ticketType}}">{{ticket.ticketType}}</option>
+                </select>
+              </div>
+  
+            </div>
+            <div class="mb-3 mt-2">
+              <label for="exampleFormControlInput1" class="form-label text-black h6">Ticket Name</label>
+              <input type="text" class="form-control rounded-pill" id="exampleFormControlInput1" name="ticketName"
+                placeholder="Enter Ticket Name" #ticketName [(ngModel)]="form.ticketName" required>
+            </div>
+            <div class="mb-3 mt-3" style="border-top-left-radius: 700px;">
+              <label for="exampleFormControlInput1" class="form-label text-black h6">Ticket Description</label>
+              <input type="text" class="form-control rounded-pill" id="exampleFormControlInput1" name="ticketDescription"
+                placeholder=" Enter About ticket" #ticketDescription [(ngModel)]="form.ticketDescription" required>
+            </div>
+  
+            <div class="mb-3 mt-3" style="border-top-left-radius: 700px;">
+              <label for="exampleFormControlInput1" class="form-label text-black h6">Price</label>
+              <input type="number" class="form-control rounded-pill" id="exampleFormControlInput1" name="price"
+                placeholder="Enter Price " #price [(ngModel)]="form.price" required>
+            </div>
+            <div class="mb-3 mt-3" style="border-top-left-radius: 700px;">
+              <label for="exampleFormControlInput1" class="form-label text-black h6">Total Tickets</label>
+              <input type="number" class="form-control rounded-pill" id="exampleFormControlInput1" name="totalTickets"
+                placeholder="Enter totalTickets " #totalTickets [(ngModel)]="form.totalTickets" required>
+            </div>
+            <div class="d-grid gap-2 col-2 mx-auto">
+              <button class="btn btn-primary fw-bolder" type="submit" (click)="submit()" [disabled]="!form.eventName ||!form.ticketType || !form.price || !form.ticketName || ! form.ticketDescription || ! ticketDescription">Update</button>
+            </div>
+          </form>
+        </div>
+    </div>
+    </div>
+    </section>

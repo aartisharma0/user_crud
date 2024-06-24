@@ -1,0 +1,77 @@
+<div class="banner-bottom">
+    <div class="container">
+        <div class="inner_sec_info_agileits_w3">
+            <h3 class="heading-agileinfo">Add Booking<span>Skin,Nails and Beauty Services</span></h3>
+            <div class="contact-form">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="Login">
+                        <form>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-1"><label>Name</label></div>
+                                    <div class="col-md-7">
+                                        <input class="form-control" placeholder="Enter name" 
+                                        name="customerName" #customerName [(ngModel)]="form.customerName">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-1"><label>Category Name</label></div>
+                                    <div class="col-md-7">
+                                        <input class="form-control" placeholder="Enter Category" 
+                                        name="categoryName" #categoryName [(ngModel)]="form.categoryName" readOnly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-1"><label>Service</label></div>
+                                    <div class="col-md-7">
+                                        <input class="form-control" placeholder="Enter Service" 
+                                            name="serviceName" #serviceName [(ngModel)]="form.serviceName" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-1"><label>Price</label></div>
+                                    <div class="col-md-7">
+                                        <input class="form-control"  type="number" name="price"
+                                            #price [(ngModel)]="form.price"   readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-1"><label>Booking Date</label></div>
+                                    <div class="col-md-7">
+                                        <input class="form-control" placeholder="Enter Date" type="date" name="bookingDate"
+                                            #bookingDate [(ngModel)]="form.bookingDate">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-5"></div>
+                                    <div class="col-md-6">
+                                        <button type="button" class="btn btn-danger my-3 mx-auto d-block"
+                                            (click)="submit()"
+                                            [disabled]="!form.categoryName || !form.serviceName || !form.price ">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

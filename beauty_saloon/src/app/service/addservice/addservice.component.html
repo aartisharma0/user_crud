@@ -1,0 +1,80 @@
+<div class="banner-bottom">
+    <div class="container">
+        <div class="inner_sec_info_agileits_w3">
+            <h3 class="heading-agileinfo">Add Service<span>Skin,Nails and Beauty Services</span></h3>
+            <div class="contact-form">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="Login">
+                        <form>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-1"><label>Category Name</label></div>
+                                    <div class="col-md-7">
+                                        <select name="categoryName" #categoryName [(ngModel)]="form.categoryName"
+                                            class="form-control">
+                                            <option value="" selected disabled>Select Category</option>
+                                            <option *ngFor="let cat of categorydata">{{cat.categoryName}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-1"><label>Service</label></div>
+                                    <div class="col-md-7">
+                                        <input class="form-control" placeholder="Enter Service" 
+                                            name="serviceName" #serviceName [(ngModel)]="form.serviceName">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-1"><label>Image</label></div>
+                                    <div class="col-md-7">
+                                        <input class="form-control" (change)="selectFile($event)" type="file" name="image"
+                                            #image [(ngModel)]="form.image">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-1"><label>Price</label></div>
+                                    <div class="col-md-7">
+                                        <input class="form-control" placeholder="Enter Price" type="number" name="price"
+                                            #price [(ngModel)]="form.price">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-1"><label>Description</label></div>
+                                    <div class="col-md-7">
+                                        <input class="form-control" placeholder="Enter Description" name="description"
+                                            #description [(ngModel)]="form.description">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-5"></div>
+                                    <div class="col-md-6">
+                                        <button type="button" class="btn btn-danger my-3 mx-auto d-block"
+                                            (click)="submit()"
+                                            [disabled]="!form.categoryName || !form.serviceName || !selectedFiles  || !form.price || !form.description ">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

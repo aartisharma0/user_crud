@@ -1,0 +1,30 @@
+
+<!-- Team -->
+<div class="team">
+		<div class="container">
+		<h3 class="heading-agileinfo">Services<span>Skin,Nails and Beauty Services</span></h3>
+			<div class="agile_team_grids">
+                <div class="col-md-3 agile_team_grid" *ngFor="let data of categories">
+				<a [routerLink]="['/layout/services',data.categoryName]" class="stretched-link mt-5 mt-b">
+					
+                    <div class="view view-sixth mb-5">
+						<img src="{{data.fileName}}" alt=" " class="img-responsive" style="height:251px;">
+						<div class="mask">
+							<h5>{{data.categoryName}}</h5>
+						</div>
+					</div>
+					<div class="mt-5">
+						<p >{{data.categoryName}}</p>
+					</div>
+                </a>
+				</div>
+				
+				
+				
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //Team -->
+
+

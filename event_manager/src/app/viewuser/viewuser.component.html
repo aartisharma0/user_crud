@@ -1,0 +1,39 @@
+<section id="register" class="register sections-bg">
+    <div class="container-fluid my-1">
+      <div class="row">
+        <div class="col-md-10 mx-auto my-1  rounded-3">
+          <!--heading-->
+          <div class="mx-auto mt-2 fw-bolder">
+            <h1 style="text-align: center;color: rgb(0, 0, 0);">Manage User</h1>
+              <hr class="hell mx-auto">
+          </div>
+          <div class="row d-flex">
+            <div class="col-md-12 mx-auto table-responsive justify-content-center">
+                <table class="table table-light table-bordered table-striped text-black ">
+                    <thead class="table-dark text-white">
+                        <tr>
+                            <th>Sr.no.</th>
+                            <th>User ID </th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+                            <th>Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of services; let i = index">
+                            <td>{{ i + 1 }}</td>
+                            <td>{{ data.uid }}</td>
+                            <td>{{ data.name }}</td>
+                            <td>{{ data.email }}</td>
+                            <td>{{ data.contact }}</td>
+                            <td>{{ data.address }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    </section>

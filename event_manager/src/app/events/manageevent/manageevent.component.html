@@ -1,0 +1,58 @@
+<section id="register" class="register sections-bg">
+    <div class="container-fluid my-1">
+      <div class="row">
+        <div class="col-md-10 mx-auto my-1  rounded-3">
+          <!--heading-->
+          <div class="mx-auto mt-2 fw-bolder">
+            <h1 style="text-align: center;color: rgb(0, 0, 0);">Manage Event</h1>
+              <hr class="hell mx-auto">
+          </div>
+          <div class="row d-flex">
+            <div class="col-md-12 mx-auto table-responsive justify-content-center">
+                <table class="table table-light table-bordered table-striped text-black ">
+                    <thead class="table-dark text-white">
+                        <tr>
+                            <th>Sr.no.</th>
+                            <th>Event </th>
+                            <th>Thumbnail</th>
+                            <th>Description</th>
+                            <th>Location</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of services; let i = index">
+                            <td>{{ i + 1 }}</td>
+                            <td>{{ data.eventName }}</td>
+                            <td align="center">
+                                <img src="{{data.image}}" alt="" class="img-thumbnail"
+                                    style="height: 200px; width: 200px;" />
+                                </td>
+                            
+                            <td>{{ data.eventDescription }}</td>
+                            <td>{{ data.eventLocation }}</td>
+                            <td>{{ data.eventDate }}</td>
+                            <td>
+                                <span
+                                    [ngClass]="{'status-enable': data.status === 'enable', 'status-disable': data.status === 'disable'}">{{
+                                    data.status }}</span>
+                            </td>
+                            <td class="a1" align="center">
+                                <a class="btn2 " style="color: blue;"
+                                    [routerLink]="['/layout/updateevent', data.id]">
+                                    <i class="bi bi-pencil-square  fa-2x"></i>
+                                </a> &nbsp;
+                                <a class=" btn1  bi bi-check " style="color:green" *ngIf="data.status == 'Disable'" (click)="EnableDisable(data.id,'Enable')"></a> &nbsp;
+                                <a class=" btn1  bi bi-x  " style="color: red;" *ngIf="data.status == 'Enable'" (click)="EnableDisable(data.id,'Disable')"></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    </section>
