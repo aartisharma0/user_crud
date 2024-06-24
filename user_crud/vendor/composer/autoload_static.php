@@ -13,8 +13,8 @@ class ComposerStaticInitfe33f98a750b8c5a51b30c78bd3fab21
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
-        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
+        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
@@ -155,6 +155,7 @@ class ComposerStaticInitfe33f98a750b8c5a51b30c78bd3fab21
         ),
         'E' => 
         array (
+            'ErlandMuchasaj\\LaravelFileUploader\\' => 35,
             'Egulias\\EmailValidator\\' => 23,
         ),
         'D' => 
@@ -488,6 +489,10 @@ class ComposerStaticInitfe33f98a750b8c5a51b30c78bd3fab21
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fakerphp/faker/src/Faker',
+        ),
+        'ErlandMuchasaj\\LaravelFileUploader\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/erlandmuchasaj/laravel-file-uploader/src',
         ),
         'Egulias\\EmailValidator\\' => 
         array (
@@ -918,6 +923,12 @@ class ComposerStaticInitfe33f98a750b8c5a51b30c78bd3fab21
         'Egulias\\EmailValidator\\Warning\\QuotedString' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/QuotedString.php',
         'Egulias\\EmailValidator\\Warning\\TLD' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/TLD.php',
         'Egulias\\EmailValidator\\Warning\\Warning' => __DIR__ . '/..' . '/egulias/email-validator/src/Warning/Warning.php',
+        'ErlandMuchasaj\\LaravelFileUploader\\Exceptions\\InvalidFile' => __DIR__ . '/..' . '/erlandmuchasaj/laravel-file-uploader/src/Exceptions/InvalidFile.php',
+        'ErlandMuchasaj\\LaravelFileUploader\\Exceptions\\InvalidUpload' => __DIR__ . '/..' . '/erlandmuchasaj/laravel-file-uploader/src/Exceptions/InvalidUpload.php',
+        'ErlandMuchasaj\\LaravelFileUploader\\Exceptions\\MissingFile' => __DIR__ . '/..' . '/erlandmuchasaj/laravel-file-uploader/src/Exceptions/MissingFile.php',
+        'ErlandMuchasaj\\LaravelFileUploader\\Exceptions\\UploadFailed' => __DIR__ . '/..' . '/erlandmuchasaj/laravel-file-uploader/src/Exceptions/UploadFailed.php',
+        'ErlandMuchasaj\\LaravelFileUploader\\FileUploader' => __DIR__ . '/..' . '/erlandmuchasaj/laravel-file-uploader/src/FileUploader.php',
+        'ErlandMuchasaj\\LaravelFileUploader\\FileUploaderServiceProvider' => __DIR__ . '/..' . '/erlandmuchasaj/laravel-file-uploader/src/FileUploaderServiceProvider.php',
         'Faker\\Calculator\\Ean' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Calculator/Ean.php',
         'Faker\\Calculator\\Iban' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Calculator/Iban.php',
         'Faker\\Calculator\\Inn' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Calculator/Inn.php',

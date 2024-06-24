@@ -17,54 +17,31 @@
                             <div class="card-body">
                                 {{-- @dd($url); --}}
                                 {{-- <form action="{{$url}}" method="post"> --}}
-                                {{ Form::open(['url' => url($url), 'method' => 'post']) }}
+                                {{ Form::open(['url' => url($url), 'method' => 'post' , 'enctype' => 'multipart/form-data']) }}
                                 @csrf
                                 <div class="row mb-3">
                                     <div class="col-md-6">
                                         <div class="form-floating mb-3 mb-md-0">
-                                            {{-- <input class="form-control" id="inputFirstName" name="first_name"  type="text"
-                                                    placeholder="Enter your first name" /> --}}
                                             {{ Form::text('first_name', '', ['id' => 'inputFirstName', 'class' => 'form-control', 'placeholder' => 'Enter your first name']) }}
                                             {{ Form::label('first_name', 'First Name', ['class' => 'col-sm-3 col-form-label']) }}
 
-                                            {{-- <label for="inputFirstName">First name</label> --}}
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            {{-- <input class="form-control" id="inputLastName" name="last_name" type="text"
-                                                placeholder="Enter your last name" /> --}}
                                             {{ Form::text('last_name', '', ['id' => 'inputLastName', 'class' => 'form-control', 'placeholder' => 'Enter your last name']) }}
                                             {{ Form::label('last_name', 'Last Name', ['class' => 'col-sm-3 col-form-label']) }}
-
-                                            {{-- <label for="inputLastName">Last name</label> --}}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    {{-- <input class="form-control" id="inputEmail" name="email" type="email"
-                                        placeholder="name@example.com" />
-                                    <label for="inputEmail">Email address</label> --}}
                                     {{ Form::email('email', '', ['id' => 'inputEmail', 'class' => 'form-control', 'placeholder' => 'name@example.com']) }}
                                     {{ Form::label('email', 'Email', ['class' => 'col-sm-3 col-form-label']) }}
 
                                 </div>
                                 <div class="row mb-3">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-floating mb-3 mb-md-0">
-                                            {{-- <input class="form-control" id="inputPassword" name="password" type="password"
-                                                placeholder="Create a password" />
-                                            <label for="inputPassword">Password</label> --}}
-                                            {{ Form::password('password', ['id' => 'inputPassword', 'class' => 'form-control', 'placeholder' => 'Create a password']) }}
-                                            {{ Form::label('password', 'Password', ['class' => 'col-sm-3 col-form-label']) }}
-        
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating mb-3 mb-md-0">
-                                            <input class="form-control" id="inputPasswordConfirm" name="confirm_password"
-                                                type="password" placeholder="Confirm password" />
-                                            <label for="inputPasswordConfirm">Confirm Password</label>
                                             {{ Form::password('password', ['id' => 'inputPassword', 'class' => 'form-control', 'placeholder' => 'Create a password']) }}
                                             {{ Form::label('password', 'Password', ['class' => 'col-sm-3 col-form-label']) }}
         
@@ -72,21 +49,30 @@
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-floating mb-3 mb-md-0">
                                             <input class="form-control" id="inputContact" name="contact" type="number"
                                                 placeholder="Contact" />
                                             <label for="inputContact">Contact</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="form-floating mb-3 mb-md-0">
                                             <input class="form-control" id="inputDateOfBirth" name="dob" type="date"
                                                 placeholder="Date Of Birth" />
                                             <label for="inputDateOfBirth">Date Of Birth</label>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3 mb-md-0">
+                                            <input class="form-control" id="inputFile" name="image" type="file"
+                                                placeholder="File" />
+                                            <label for="inputContact">File</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
                                         <div class="form-floating mb-3 mt-3 mb-md-0">
                                             <div class="d-flex align-items-center">
                                                 <label for="inputGender" class="mr-2">Gender</label>
